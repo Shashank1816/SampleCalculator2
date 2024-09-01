@@ -1,17 +1,27 @@
-import { ACTIONS } from "./App";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { chooseOperation } from "./actions";
 
-export default function DigitButton({ dispatch, digit }) {
+export default function OperationButton({ operation }) {
+  const dispatch = useDispatch();
+
   const handleClick = () => {
+    dispatchOperation();
+  };
+
+  const dispatchOperation = () => {
     try {
-      dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit } });
+      dispatch(chooseOperation(operation));
+      console.log("Dispatch successful:", operation);
     } catch (error) {
-      console.error("Error occurred while dispatching action:", error);
+      console.error("Error occurred during dispatch:", error);
     }
   };
 
   return (
+// new feature testing
     <button onClick={handleClick}>
-      {digit}
+      {operation}
     </button>
   );
 }
