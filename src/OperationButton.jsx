@@ -1,13 +1,17 @@
-import { ACTIONS } from "./App";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { chooseOperation } from "./actions";
 
-export default function OperationButton({ dispatch, operation }) {
+export default function OperationButton({ operation }) {
+  const dispatch = useDispatch();
+
   const handleClick = () => {
     dispatchOperation();
   };
 
   const dispatchOperation = () => {
     try {
-      dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation } });
+      dispatch(chooseOperation(operation));
       console.log("Dispatch successful:", operation);
     } catch (error) {
       console.error("Error occurred during dispatch:", error);
@@ -15,7 +19,7 @@ export default function OperationButton({ dispatch, operation }) {
   };
 
   return (
-  <button onClick={handleClick}>
+    <button onClick={handleClick}>
       {operation}
     </button>
   );
