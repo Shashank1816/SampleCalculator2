@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { chooseOperation } from "./actions";
 
-function OperationButton({ operation }) {
+const OperationButton = ({ operation }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -23,6 +23,6 @@ function OperationButton({ operation }) {
       {operation}
     </button>
   );
-}
+};
 
 export default OperationButton;
