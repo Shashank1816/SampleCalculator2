@@ -5,10 +5,12 @@ import { chooseOperation } from "./actions";
 const OperationButton = ({ operation }) => {
   const dispatch = useDispatch();
 
+  // Function to handle button click
   const handleClick = () => {
     dispatchOperation();
   };
 
+  // Function to dispatch the operation
   const dispatchOperation = () => {
     try {
       dispatch(chooseOperation(operation));
@@ -18,6 +20,7 @@ const OperationButton = ({ operation }) => {
     }
   };
 
+  // Render the button with the operation as text
   return (
     <button onClick={handleClick}>
       {operation}
