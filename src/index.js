@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 import App from "./App";
 
-// Get the root element from the DOM
 const rootElement = document.getElementById("root");
 
 // Function to render the app
