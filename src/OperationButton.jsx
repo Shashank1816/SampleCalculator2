@@ -1,7 +1,9 @@
+
 import React from "react";
 import { useDispatch } from "react-redux";
 import { chooseOperation } from "./actions";
 
+// Component responsible for rendering an operation button
 const OperationButton = ({ operation }) => {
   const dispatch = useDispatch();
 
@@ -29,3 +31,4 @@ const OperationButton = ({ operation }) => {
 };
 
 export default OperationButton;
+
