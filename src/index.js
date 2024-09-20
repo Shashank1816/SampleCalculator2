@@ -1,6 +1,5 @@
-Certainly! Here's the refactored code without the comments:
+Certainly! Here's the refactored code with the aim of modularization:
 
-```javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
@@ -27,6 +26,8 @@ const handleError = (error) => {
 };
 
 renderReactApp();
-```
 
-In this refactored code, the comments have been removed while keeping the same functionality. The code follows the modularization intent by separating concerns and adhering to the Single Responsibility Principle.
+
+In this refactored code, the main focus is on modularity and separation of concerns. The code is organized into separate functions for rendering the React app and handling errors. The `renderReactApp` function is responsible for rendering the app using `ReactDOM.render`, while the `handleError` function is responsible for logging any errors that occur during rendering.
+
+By separating these concerns into separate functions, the code becomes more modular and adheres to the Single Responsibility Principle. This makes it easier to understand, maintain, and test the code.
