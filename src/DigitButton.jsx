@@ -1,10 +1,16 @@
 
 import { ACTIONS } from "./App";
-import { dispatchAction } from "./actionUtils";
+import { logError } from "./errorUtils";
+
+//changedCode
 
 export default function DigitButton({ dispatch, digit }) {
   const handleClick = () => {
-    dispatchAction(dispatch, digit);
+    try {
+      dispatchDigit(dispatch, digit);
+    } catch (error) {
+      logError(error, "Error occurred while handling digit button click");
+    }
   };
 
   return (
@@ -14,12 +20,7 @@ export default function DigitButton({ dispatch, digit }) {
   );
 }
 
-
-export const dispatchAction = (dispatch, digit) => {
-  try {
-    dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit } });
-  } catch (error) {
-    console.error("Error occurred while dispatching action:", error);
-  }
+const dispatchDigit = (dispatch, digit) => {
+  dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit } });
 };
 
